@@ -4,7 +4,7 @@
 
 namespace sdds {
 	class Utilities {
-		size_t m_widthField;
+		size_t m_widthField{ 1 };
 		static char m_delimiter;
 	public:
 		void setFieldWidth(size_t newWidth);

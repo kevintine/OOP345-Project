@@ -10,8 +10,8 @@ namespace sdds {
 		size_t serial_num;
 		size_t stock;
 		// class variables
-		size_t m_widthField;
-		size_t id_generator;
+		static size_t m_widthField;
+		static size_t id_generator;
 	public:
 		Station(std::string str);
 		const std::string& getItemName() const;

@@ -1,9 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include "Utilities.h"
-
+#include <algorithm> 
+#include <string>
 
 namespace sdds {
+	char Utilities::m_delimiter = ' ';
 	// sets the current object's field width (m_widthField) to the newWidth
 	void Utilities::setFieldWidth(size_t newWidth) {
 		m_widthField = newWidth;
@@ -14,22 +16,27 @@ namespace sdds {
 	}
 	// extracts a token from string str
 	std::string Utilities::extractToken(const std::string& str, size_t& next_pos, bool& more) {
-		// use the delimiter (m_delimiter) to extract the next token from str starting from next_pos
-		//	This function :
-		//	uses the delimiter to extract the next token from str starting at position next_pos.
-		//	If successful, return a copy of the extracted token found(without spaces at the beginning / end),
-		//  update next_pos with the position of the next token, and set more to true (false otherwise).
-		//	reports an exception if a delimiter is found at next_pos.
-		//	updates the current object's m_widthField data member if its current value is less than the size of the token extracted.
-		std::string token = str.substr(next_pos, str.find(getDelimiter()));
+		size_t curr_pos = next_pos;
+		std::string token;
 		more = true;
-		next_pos = str.find(getDelimiter());
-		if (next_pos == str.find(getDelimiter())) {
-			throw "Found delimiter at next position";
+		next_pos = str.find(getDelimiter(), curr_pos);
+		if (next_pos == std::string::npos) {
+			token = str.substr(curr_pos);
 			more = false;
 		}
-		if (getFieldWidth() < token.size())
-			setFieldWidth(token.size());
+		else if (next_pos == curr_pos) {
+			more = false;
+			throw "No more tokens";
+		}
+		else {
+			token = str.substr(curr_pos, next_pos - curr_pos);
+			more = true;
+		}
+		token.erase(0, token.find_first_not_of(' '));
+		token.erase(token.find_last_not_of(' ') + 1);
+		if (m_widthField < token.length())
+			m_widthField = token.length();
+		next_pos++;
 		return token;
 
 	}
