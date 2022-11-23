@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CustomerOrder.cpp" />
     <ClCompile Include="ms1.cpp" />
     <ClCompile Include="Station.cpp" />
     <ClCompile Include="Utilities.cpp" />
@@ -149,6 +150,7 @@
     <Text Include="Stations2.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CustomerOrder.h" />
     <ClInclude Include="Station.h" />
     <ClInclude Include="Utilities.h" />
   </ItemGroup>
