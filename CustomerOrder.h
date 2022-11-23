@@ -25,6 +25,8 @@ namespace sdds {
 
 		CustomerOrder();
 		~CustomerOrder();
+		CustomerOrder(std::string& input);
+		CustomerOrder(CustomerOrder& src);
 		//a CustomerOrder object should not allow copy operations. The copy constructor should throw an exception if called and the copy operator= should be deleted.
 		CustomerOrder& operator=(CustomerOrder& src) = delete;
 		//a move constructor. This constructor should "promise" that it doesn't throw exceptions. Use the noexcept keyword in the declaration and the definition.

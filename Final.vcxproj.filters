@@ -29,13 +29,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="ms1_output.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="Stations1.txt">
+    <Text Include="CustomerOrders.txt">
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="Stations2.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Stations1.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>
