@@ -27,10 +27,13 @@ namespace sdds {
 		bool ok = true;
 		Utilities utilities;
 
+		if (input.length() < 0)
+			return;
+
 		m_name = utilities.extractToken(input, curr_pos, ok);
 		m_product = utilities.extractToken(input, curr_pos, ok);
 		m_cntItem = std::count(input.begin(), input.end(), utilities.getDelimiter()) - 1;
-		m_lstItem = new Item* [m_cntItem];
+		m_lstItem = new Item * [m_cntItem];
 		for (size_t i = 0; i < m_cntItem; i++) {
 			Item* temp = new Item(utilities.extractToken(input, curr_pos, ok));
 			m_lstItem[i] = std::move(temp);
@@ -48,11 +51,11 @@ namespace sdds {
 	CustomerOrder& CustomerOrder::operator=(CustomerOrder&& src) noexcept {
 		if (this == &src)
 			return *this;
-		//if (m_lstItem) {
-		//	for (size_t i = 0; i < m_cntItem; i++)
-		//		delete this->m_lstItem[i];
-		//	delete[] m_lstItem;
-		//}
+		if (m_lstItem) {
+			for (size_t i = 0; i < m_cntItem; i++)
+				delete m_lstItem[i];
+			delete[] m_lstItem;
+		}
 		m_name = src.m_name;
 		m_product = src.m_product;
 		m_cntItem = src.m_cntItem;
@@ -97,12 +100,12 @@ namespace sdds {
 		}
 	}
 	void CustomerOrder::display(std::ostream& os) const {
-		if (m_lstItem) {//do not display empties
+		if (m_lstItem) {
 			os << m_name << " - " << m_product << std::endl;
 			for (size_t i = 0; i < m_cntItem; i++) {
 				os << "[" << std::setw(6) << std::setfill('0') << std::right << m_lstItem[i]->m_serialNumber << "] "
 					<< std::setw(m_widthField) << std::setfill(' ') << std::left << m_lstItem[i]->m_itemName
-					<< " - " << (m_lstItem[i]->m_isFilled ? "FILLED" : "TO BE FILLED") << std::endl;
+					<< "   - " << (m_lstItem[i]->m_isFilled ? "FILLED" : "TO BE FILLED") << std::endl;
 			}
 		}
 	}

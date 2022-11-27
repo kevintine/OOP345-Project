@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ms1.cpp">
+    <ClCompile Include="ms2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Utilities.cpp">
@@ -49,5 +49,10 @@
     <ClInclude Include="CustomerOrder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Utilities.h,">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

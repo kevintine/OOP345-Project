@@ -140,7 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CustomerOrder.cpp" />
-    <ClCompile Include="ms1.cpp" />
+    <ClCompile Include="ms2.cpp" />
     <ClCompile Include="Station.cpp" />
     <ClCompile Include="Utilities.cpp" />
   </ItemGroup>
@@ -153,6 +153,9 @@
     <ClInclude Include="CustomerOrder.h" />
     <ClInclude Include="Station.h" />
     <ClInclude Include="Utilities.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Utilities.h," />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
