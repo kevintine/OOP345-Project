@@ -32,9 +32,10 @@ namespace sdds {
 		return stock;
 	}
 	void Station::updateQuantity() {
-		if (stock == 0)
+		if (stock == 0) {
+			return;
 			throw "Cannot drop below 0";
-
+		}
 		else
 			stock -= 1;
 
