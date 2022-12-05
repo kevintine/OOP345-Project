@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 
-#include "WorkStation.h"
+#include "Workstation.h"
 std::deque<sdds::CustomerOrder> g_pending{};
 std::deque<sdds::CustomerOrder> g_completed{};
 std::deque<sdds::CustomerOrder> g_incomplete{};

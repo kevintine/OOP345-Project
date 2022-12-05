@@ -144,7 +144,7 @@
     <ClCompile Include="ms3.cpp" />
     <ClCompile Include="Station.cpp" />
     <ClCompile Include="Utilities.cpp" />
-    <ClCompile Include="WorkStation.cpp" />
+    <ClCompile Include="Workstation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="AssemblyLine.txt" />
@@ -157,7 +157,7 @@
     <ClInclude Include="LineManager.h" />
     <ClInclude Include="Station.h" />
     <ClInclude Include="Utilities.h" />
-    <ClInclude Include="WorkStation.h" />
+    <ClInclude Include="Workstation.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Utilities.h," />
